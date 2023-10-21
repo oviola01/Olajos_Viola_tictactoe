@@ -1,3 +1,7 @@
+:root{
+    --meret:3;
+}
+
 .elem{
     border: 1px solid gray;
     text-align: center;
@@ -16,6 +20,6 @@ body{
 
 .jatekter{
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: repeat(var(--meret), 100px);
+    grid-template-rows: repeat(var(--meret), 100px);
 }
