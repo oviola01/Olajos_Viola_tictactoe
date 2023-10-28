@@ -12,10 +12,12 @@ class TTTController{
         this.infoView.setKovJatekos(kezdo);
         
         $(window).on("elemKivalaszt", (event)=>{
-            //console.log(event.detail);
+            let aktualObj = event.detail;
+            console.log(aktualObj); //melyik elemre kattintottam
             //itt hívom meg a modelt, és megkérem, hogy számoljon, hogy mondja meg, hogy ki következik
-            let ertek=this.tttModel.aktualJatekos();
-            event.detail.setErtek(ertek);
+            let ertek=this.tttModel.aktualJatekos(aktualObj.index);
+            console.log(ertek);
+            aktualObj.setErtek(ertek);
             let kovetkezo=this.tttModel.koviEmber();
             this.infoView.setKovJatekos(kovetkezo);
         });
